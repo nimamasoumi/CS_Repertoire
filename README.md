@@ -1,7 +1,7 @@
 # C# Repertoire 
 Programming conceptual C# codes for lernears and enthusiasts. 
 
-![alt-text](https://github.com/nimamasoumi/Java_Repertoire/blob/main/cs.jpg?raw=true)
+![alt-text](https://github.com/nimamasoumi/CS_Repertoire/blob/main/cs.jpg?raw=true)
 
 
 # Usage and run the program #
