@@ -35,8 +35,8 @@ Using command line:
   
 - Step 4:
   Run the project:
+  
   dotnet run
-
   
 
 # Remarks #
