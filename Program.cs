@@ -41,6 +41,12 @@ namespace CS_Repertoire
             Console.WriteLine("Counter {0} finished.", cdown2.Name);
             Console.WriteLine("Counter {0} finished.", cup1.Name);
 
+            // testing partial classes
+            var mycalc = new calc();
+            int x = 3, y = 4;
+            Console.WriteLine("Addition: {0}\nSubtraction: {1}\nMultiplication: {2}\nDivision: {3}"
+                , mycalc.add(x, y),mycalc.sub(x,y), mycalc.mul(x, y), mycalc.div(x, y));
+
             Console.ReadKey();
 
 
