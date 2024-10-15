@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace CS_Repertoire
 {
@@ -46,6 +48,21 @@ namespace CS_Repertoire
             int x = 3, y = 4;
             Console.WriteLine("Addition: {0}\nSubtraction: {1}\nMultiplication: {2}\nDivision: {3}"
                 , mycalc.add(x, y),mycalc.sub(x,y), mycalc.mul(x, y), mycalc.div(x, y));
+
+            #region testing App.config file key/value pairs
+
+            // reading a particular key from configuration
+            string sAttr = ConfigurationManager.AppSettings.Get("key19");
+            Console.WriteLine("value for key19 is: "+ sAttr);
+
+            // reading all the key/value pairs at the same time
+            NameValueCollection sAll = ConfigurationManager.AppSettings;
+            foreach(string s in sAll.AllKeys)
+            {
+                Console.WriteLine("The value for " + s + " is " + sAll.Get(s));
+            }
+
+            #endregion
 
             Console.ReadKey();
 
