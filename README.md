@@ -45,4 +45,6 @@ I am expanding my C# programming knowledge everyday. I create codes to showcase 
 
 1. Static methods, variables, and the application of static modifier
 2. Thread class, Multithreading, interrupting a thread using sleep.
+3. Formal configuration management which is using App.config
+4. Several modifiers such as partial and out.  
 
