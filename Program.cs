@@ -7,6 +7,11 @@ namespace CS_Repertoire
 {
     class Program
     {
+        public static void calcAreaCircumference(out double area, out double circumference, double r)
+        {
+            area = Math.PI * Math.Pow(r, 2.0);
+            circumference = 2 * Math.PI * r;
+        }
         static void Main(string[] args)
         {
             Thread cdown1 = new(() => CountDown(1, 19));
@@ -64,6 +69,15 @@ namespace CS_Repertoire
 
             #endregion
 
+            #region testing out keyword
+            double radius = 19.0;
+
+            // notice below that area and circumference variables were not declared beforehand
+            // also the function below does not have a return value and work with references
+            calcAreaCircumference(out double area, out double circumference, radius);
+            Console.WriteLine("Circle with radius {0}: area={1}, circumference={2}", radius, area, circumference);
+            #endregion
+
             Console.ReadKey();
 
 
@@ -89,7 +103,7 @@ namespace CS_Repertoire
                 Thread.Sleep(100);
             }
 
-        }
-
+        }        
+        
     }
 }
