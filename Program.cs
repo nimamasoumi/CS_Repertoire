@@ -85,6 +85,18 @@ namespace CS_Repertoire
             // Line below is raising a notification
             // Similar to clicking a button etc
             e1.tryToInvokeEvent1();
+
+            // raising the event with some data
+            V1EventArgs e1arg = new V1EventArgs(2, "This is the second call of the event");
+            e1.tryToInvokeEvent1(e1arg);
+
+
+            // raising event 2
+            e1.tryToInvokeEvent2();
+
+            // unsubscribing the event 2 executable
+            bool success2 = e1.unsubscribeEvent2Exec();
+            Console.WriteLine("Event 2 was unsubscribed: "+success2);
             #endregion
 
             Console.ReadKey();
