@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Configuration;
 using System.Collections.Specialized;
+using CS_Repertoire.Concepts;
 
 namespace CS_Repertoire
 {
@@ -76,6 +77,14 @@ namespace CS_Repertoire
             // also the function below does not have a return value and work with references
             calcAreaCircumference(out double area, out double circumference, radius);
             Console.WriteLine("Circle with radius {0}: area={1}, circumference={2}", radius, area, circumference);
+            #endregion
+
+            #region testing the event keyword
+            EventPublisherTest e1 = new EventPublisherTest();
+
+            // Line below is raising a notification
+            // Similar to clicking a button etc
+            e1.tryToInvokeEvent1();
             #endregion
 
             Console.ReadKey();
