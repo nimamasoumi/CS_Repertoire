@@ -3,6 +3,7 @@ using System.Threading;
 using System.Configuration;
 using System.Collections.Specialized;
 using CS_Repertoire.Concepts;
+using System.Runtime.CompilerServices;
 
 namespace CS_Repertoire
 {
@@ -104,13 +105,18 @@ namespace CS_Repertoire
             e2.event3 += EventGreeting;
             e2.event4 += EventGreeting;
 
+            // This is a count-down to raise the events;
             for (int ii=19;ii>0; ii--)
-            {
-                // This is a count-down to raise the events;
+            {                
                 Thread.Sleep(100);
 
                 e2.CountChecker(ii);
             }
+
+            // the delegate can be raised here!
+            e2.event4?.Invoke(e2, new CustomEventArgs(4, "Hello dear user!"));
+            // however the event can not be invoked and generates an error
+            //e2.event3?.Invoke(e2, new CustomEventArgs(3, "Hello dear user!"));
             #endregion
 
             Console.ReadKey();
