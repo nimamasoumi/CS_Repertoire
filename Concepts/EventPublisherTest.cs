@@ -15,9 +15,15 @@ namespace CS_Repertoire.Concepts
          * 3. Raise the event
         */
 
-        // Create the event
+        // Create the events
         public event EventHandler<V1EventArgs> event1;
         public event EventHandler event2;
+
+        // below example shows that events are special kind of delegates
+        public delegate void CustomHandler (object sender, CustomEventArgs e);
+        // notice that we don't need <event-argument> here
+        public event CustomHandler event3;
+
         public EventPublisherTest() 
         {
             // += operator is used to subscribe to events
@@ -27,7 +33,7 @@ namespace CS_Repertoire.Concepts
         }
 
         // This function is executed when the event is raised
-        private void event1executable(object sender, V1EventArgs e)
+        private void event1executable(object? sender, V1EventArgs e)
         {
             Console.WriteLine("Testing the invocation of the event1.");
 
@@ -39,7 +45,7 @@ namespace CS_Repertoire.Concepts
         }
 
         // testing Empty field in EventArgs
-        private void event2executable(object sender, EventArgs e)
+        private void event2executable(object? sender, EventArgs e)
         {
             Console.WriteLine("Testing the Empty field in EventArgs.");          
         }
@@ -74,15 +80,13 @@ namespace CS_Repertoire.Concepts
     internal class V1EventArgs : EventArgs
     {
         public int eventid { get; set; }
-        public string eventdata { get; set; }
+        public string eventdata { get { return ""; } set { } }
 
         public V1EventArgs() { }
         public V1EventArgs(int _eventid, string _eventdata)
         {
             this.eventid = _eventid;
             this.eventdata = _eventdata;
-        }
-        
-         
+        }                 
     }
 }

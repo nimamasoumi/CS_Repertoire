@@ -48,4 +48,5 @@ I am expanding my C# programming knowledge everyday. I create codes to showcase 
 3. Formal configuration management which is using App.config
 4. Several modifiers such as partial and out.  
 5. Event concept, standard event handlers, customg EventArgs, and subscribe/unsubscribe events
+6. Delegate keyword with its comparison to the event
 

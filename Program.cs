@@ -99,6 +99,20 @@ namespace CS_Repertoire
             Console.WriteLine("Event 2 was unsubscribed: "+success2);
             #endregion
 
+            #region comparing events and delegates
+            var e2 = new DelegateNEvent();
+            e2.event3 += EventGreeting;
+            e2.event4 += EventGreeting;
+
+            for (int ii=19;ii>0; ii--)
+            {
+                // This is a count-down to raise the events;
+                Thread.Sleep(100);
+
+                e2.CountChecker(ii);
+            }
+            #endregion
+
             Console.ReadKey();
 
 
@@ -126,5 +140,9 @@ namespace CS_Repertoire
 
         }        
         
+        public static void EventGreeting(object? sender, CustomEventArgs e)
+        {
+            Console.WriteLine("Greeting to the dear user! EventID: {0}, EventData: {1}", e.eventid, e.eventdata);
+        }
     }
 }
