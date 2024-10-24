@@ -46,7 +46,8 @@ I am expanding my C# programming knowledge everyday. I create codes to showcase 
 1. Static methods, variables, and the application of static modifier
 2. Thread class, Multithreading, interrupting a thread using sleep.
 3. Formal configuration management which is using App.config
-4. Several modifiers such as partial and out.  
-5. Event concept, standard event handlers, customg EventArgs, and subscribe/unsubscribe events
-6. Delegate keyword with its comparison to the event
+4. Modifiers such as `partial` for claases and `out` for function arguments.  
+5. Event concept, standard event handlers, customg EventArgs, and subscribe/unsubscribe events.
+6. Delegate keyword with its comparison to the event.
+7. Lambda expressions and their connection to delegate `Action` and `Func` types. 
 

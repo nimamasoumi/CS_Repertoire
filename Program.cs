@@ -119,6 +119,10 @@ namespace CS_Repertoire
             //e2.event3?.Invoke(e2, new CustomEventArgs(3, "Hello dear user!"));
             #endregion
 
+            #region examples of lambda expression and its connection with delegates
+            e2.RunLambdaExamples();
+            #endregion
+
             Console.ReadKey();
 
 
