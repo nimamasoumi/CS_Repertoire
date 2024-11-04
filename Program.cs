@@ -123,6 +123,22 @@ namespace CS_Repertoire
             e2.RunLambdaExamples();
             #endregion
 
+            #region example of adding multiple event handlers to an event and removing them all
+            var e3 = new ManagingMultipleEvents();
+
+            // adding event handlers
+            e3.AddEventHandlers();
+
+            // counting the number of event handlers
+            var event_num_e3 = e3.CountEventHandlers();
+            Console.WriteLine("\n\nThe number of event handlers are: " + event_num_e3);           
+
+            // clearing event handlers and verifing
+            e3.ClearMulEvent();
+            event_num_e3 = e3.CountEventHandlers();
+            Console.WriteLine("The number of event handlers after clearing are: " + event_num_e3);
+            #endregion
+
             Console.ReadKey();
 
 
