@@ -34,6 +34,23 @@ namespace CS_Repertoire.Concepts
             return num;
         }
 
+        // method below prints the event handlers
+        public void VisEventHandlers()
+        {
+            if (this.MulEventManager != null)
+            {
+                Console.WriteLine("\n\nVisualizing the event handlers: ");
+                foreach (Delegate d in this.MulEventManager.GetInvocationList())
+                {                    
+                    Console.WriteLine("Method: "+d.Method+"  Target: "+d.Target);
+                }
+            }
+            else
+            {
+                Console.WriteLine("There is no event handler dear!");
+            }
+        }
+
         // function below will remove all the event handlers from the event
         public void ClearMulEvent()
         {

@@ -128,10 +128,15 @@ namespace CS_Repertoire
 
             // adding event handlers
             e3.AddEventHandlers();
+            e3.MulEventManager += EventGreeting2;
 
             // counting the number of event handlers
             var event_num_e3 = e3.CountEventHandlers();
-            Console.WriteLine("\n\nThe number of event handlers are: " + event_num_e3);           
+            Console.WriteLine("\n\nThe number of event handlers are: " + event_num_e3);
+
+            // visualizing the event handlers
+            // it is interesting to see that for static method EventGreeting2, the Target property is empty/null
+            e3.VisEventHandlers();
 
             // clearing event handlers and verifing
             e3.ClearMulEvent();
@@ -169,6 +174,11 @@ namespace CS_Repertoire
         public static void EventGreeting(object? sender, CustomEventArgs e)
         {
             Console.WriteLine("Greeting to the dear user! EventID: {0}, EventData: {1}", e.eventid, e.eventdata);
+        }
+
+        public static void EventGreeting2(object? sender, EventArgs e)
+        {
+            Console.WriteLine("Greeting to the dear user!");
         }
     }
 }
